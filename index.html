@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Martínez | Educador de Lengua Inglesa</title>
+    <!-- Google Fonts: Cormorant Garamond (Elegante/Serif) e Inter (Moderna/Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons para iconografía ultra-limpia -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuración personalizada de Tailwind para adaptarlo a la paleta solicitada -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            offwhite: '#FAF9F6', // Blanco Hueso
+                            navy: '#0C1E36',     // Azul Marino profundo
+                            navyLight: '#183152',// Azul Marino medio para contrastes
+                            mustard: '#D99B26',  // Amarillo Mostaza refinado (buen contraste WCAG)
+                            mustardLight: '#F3E5C8' // Tono mostaza muy suave para fondos
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos personalizados para asegurar el correcto comportamiento estético */
+        .premium-shadow {
+            box-shadow: 0 4px 30px rgba(12, 30, 54, 0.03);
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px #0C1E36;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-offwhite text-brand-navy font-sans antialiased overflow-x-hidden selection:bg-brand-mustard selection:text-brand-navy">
+
+    <!-- Encabezado y Navegación Premium -->
+    <header class="fixed top-0 left-0 w-full bg-brand-offwhite/90 backdrop-blur-md z-50 border-b border-brand-navy/5 transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo / Nombre -->
+            <a href="#hero" class="group flex flex-col focus:outline-none">
+                <span class="font-serif text-2xl font-bold tracking-tight text-brand-navy group-hover:text-brand-mustard transition-colors duration-300">
+                    Luis Martínez
+                </span>
+                <span class="text-[10px] tracking-[0.2em] uppercase text-brand-navy/60 font-semibold -mt-1">
+                    English Educator
+                </span>
+            </a>
+
+            <!-- Menú de Escritorio (Desktop) -->
+            <div class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-wide">
+                <a href="#sobre-mi" class="hover:text-brand-mustard transition-colors duration-200">Sobre mí</a>
+                <a href="#servicios" class="hover:text-brand-mustard transition-colors duration-200">Servicios</a>
+                <a href="#portafolio" class="hover:text-brand-mustard transition-colors duration-200">Logros</a>
+                <a href="#testimonios" class="hover:text-brand-mustard transition-colors duration-200">Testimonios</a>
+                <a href="#contacto" class="px-5 py-2.5 bg-brand-navy text-brand-offwhite rounded-sm hover:bg-brand-mustard hover:text-brand-navy transition-all duration-300 transform active:scale-95">
+                    Reservar Consulta
+                </a>
+            </div>
+
+            <!-- Botón de Menú Móvil -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-navy focus:outline-none" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Cajón del menú móvil -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-navy transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between p-8 pt-32">
+        <button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-brand-offwhite focus:outline-none" aria-label="Cerrar menú">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        
+        <div class="flex flex-col space-y-8 text-2xl font-serif text-brand-offwhite">
+            <a href="#sobre-mi" class="mobile-link hover:text-brand-mustard transition-colors duration-200">Sobre mí</a>
+            <a href="#servicios" class="mobile-link hover:text-brand-mustard transition-colors duration-200">Servicios</a>
+            <a href="#portafolio" class="mobile-link hover:text-brand-mustard transition-colors duration-200">Logros & Portafolio</a>
+            <a href="#testimonios" class="mobile-link hover:text-brand-mustard transition-colors duration-200">Testimonios</a>
+        </div>
+
+        <div class="flex flex-col space-y-6">
+            <a href="#contacto" class="mobile-link w-full py-4 text-center bg-brand-mustard text-brand-navy font-semibold rounded-sm hover:bg-opacity-90 transition-all duration-300">
+                Contactar Ahora
+            </a>
+            <p class="text-xs text-brand-offwhite/40 text-center">© 2026 Luis Martínez. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN HERO: Un espacio amplio y sofisticado -->
+    <section id="hero" class="min-h-screen flex items-center pt-20 relative overflow-hidden bg-gradient-to-b from-brand-offwhite to-white">
+        <!-- Elementos geométricos decorativos minimalistas -->
+        <div class="absolute -right-32 top-10 w-96 h-96 rounded-full border border-brand-mustard/20 pointer-events-none"></div>
+        <div class="absolute left-12 bottom-12 w-64 h-64 rounded-full border border-brand-navy/5 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 w-full py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Columna Texto -->
+            <div class="lg:col-span-7 space-y-8 z-10">
+                <div class="inline-flex items-center space-x-2 bg-brand-mustard/10 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase text-brand-mustard">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-mustard"></span>
+                    <span>Educación de Alto Impacto</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-brand-navy">
+                    Redefine tu <span class="italic text-brand-mustard">inglés</span>.<br>
+                    Amplía tus fronteras.
+                </h1>
+                
+                <p class="text-base sm:text-lg text-brand-navy/70 font-light max-w-xl leading-relaxed">
+                    Soy Luis Martínez, educador y consultor de lengua inglesa. Ayudo a profesionales exigentes y estudiantes de alto rendimiento a dominar el idioma con confianza, claridad y rigor metodológico.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <a href="#contacto" class="px-8 py-4 bg-brand-navy text-brand-offwhite rounded-sm font-medium hover:bg-brand-mustard hover:text-brand-navy transition-all duration-300 text-center shadow-lg shadow-brand-navy/10 hover:shadow-brand-mustard/20">
+                        Comenzar Ahora
+                    </a>
+                    <a href="#servicios" class="px-8 py-4 border border-brand-navy/20 hover:border-brand-navy text-brand-navy rounded-sm font-medium transition-all duration-300 text-center flex items-center justify-center space-x-2">
+                        <span>Explorar Programas</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Imagen / Contenedor de Diseño Concept -->
+            <div class="lg:col-span-5 relative z-10 flex justify-center">
+                <div class="relative w-full max-w-sm sm:max-w-md aspect-[4/5] bg-brand-navy/5 rounded-2xl overflow-hidden p-4 border border-brand-navy/10">
+                    <!-- Marco estético con detalles amarillos mostaza -->
+                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-brand-mustard"></div>
+                    <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-brand-mustard"></div>
+                    
+                    <div class="w-full h-full bg-brand-navy rounded-xl flex flex-col justify-between p-8 text-brand-offwhite relative overflow-hidden">
+                        <!-- Círculo de fondo abstracto -->
+                        <div class="absolute -right-20 -bottom-20 w-60 h-60 rounded-full bg-brand-mustard/10"></div>
+                        
+                        <div class="space-y-4">
+                            <span class="font-serif text-5xl text-brand-mustard opacity-80">“</span>
+                            <p class="font-serif text-xl sm:text-2xl font-light italic leading-relaxed text-brand-offwhite/90">
+                                El idioma no es solo gramática; es la herramienta más poderosa para tu expansión profesional.
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-mustard flex items-center justify-center text-brand-navy font-bold text-lg">
+                                LM
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg font-bold">Luis Martínez</h4>
+                                <p class="text-xs text-brand-offwhite/60">C2 Certified • Cambridge Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ: Estilo editorial con amplio espacio en blanco -->
+    <section id="sobre-mi" class="py-24 sm:py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Encabezado / Título de Sección -->
+                <div class="lg:col-span-4 lg:sticky lg:top-32 space-y-4">
+                    <span class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-mustard">Trayectoria</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl tracking-tight text-brand-navy">Sobre Mí</h2>
+                    <div class="w-16 h-1 bg-brand-mustard"></div>
+                </div>
+
+                <!-- Contenido Narrativo -->
+                <div class="lg:col-span-8 space-y-10 text-brand-navy/80 font-light text-base sm:text-lg leading-relaxed">
+                    <p class="font-serif text-2xl text-brand-navy font-light leading-relaxed">
+                        Con más de una década facilitando la adopción fluida del inglés, entiendo que el aprendizaje corporativo y académico requiere de un enfoque de precisión.
+                    </p>
+                    
+                    <p>
+                        Mi metodología se aleja de la memorización tradicional y de los manuales obsoletos. Aplico técnicas basadas en la <strong>neuroeducación y la inmersión activa contextualizada</strong>, diseñando trayectos personalizados que se ajustan a las metas específicas de cada estudiante.
+                    </p>
+
+                    <p>
+                        He tenido el privilegio de colaborar con ejecutivos de grandes firmas tecnológicas, investigadores que buscaban publicar en revistas indexadas y estudiantes orientados a admisiones en universidades del grupo Ivy League y del Russell Group.
+                    </p>
+
+                    <!-- Atributos Clave / Estadísticas -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 pt-6 border-t border-brand-navy/10">
+                        <div class="space-y-1">
+                            <p class="font-serif text-4xl sm:text-5xl font-bold text-brand-mustard">10+</p>
+                            <p class="text-xs uppercase tracking-wider text-brand-navy/60 font-semibold">Años de experiencia</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="font-serif text-4xl sm:text-5xl font-bold text-brand-mustard">98%</p>
+                            <p class="text-xs uppercase tracking-wider text-brand-navy/60 font-semibold">Tasa de aprobación</p>
+                        </div>
+                        <div class="space-y-1 col-span-2 sm:col-span-1">
+                            <p class="font-serif text-4xl sm:text-5xl font-bold text-brand-mustard">450+</p>
+                            <p class="text-xs uppercase tracking-wider text-brand-navy/60 font-semibold">Profesionales impulsados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS: 3 Tarjetas de alta fidelidad estética -->
+    <section id="servicios" class="py-24 sm:py-32 bg-brand-offwhite">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Título de Sección -->
+            <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-mustard">Programas de excelencia</span>
+                <h2 class="font-serif text-4xl sm:text-5xl tracking-tight text-brand-navy">Servicios de Consultoría Lingüística</h2>
+                <p class="text-sm sm:text-base text-brand-navy/60 font-light">Diseñados meticulosamente para abordar desafíos específicos en entornos profesionales y académicos exigentes.</p>
+            </div>
+
+            <!-- Grid de Tarjetas de Servicios -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-white rounded-lg p-8 sm:p-10 border border-brand-navy/5 premium-shadow hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 rounded-sm bg-brand-navy text-brand-mustard flex items-center justify-center group-hover:bg-brand-mustard group-hover:text-brand-navy transition-colors duration-300">
+                            <i data-lucide="briefcase" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-navy">Inglés de Negocios y Liderazgo</h3>
+                        <p class="text-sm text-brand-navy/70 leading-relaxed font-light">
+                            Sesiones de alto nivel enfocadas en negociaciones internacionales, redacción de informes clave, presentaciones de impacto y dominio de la diplomacia corporativa.
+                        </p>
+                    </div>
+                    <div class="pt-8 border-t border-brand-navy/5 mt-8 flex items-center justify-between">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-brand-mustard">Presencial u Online</span>
+                        <a href="#contacto" class="text-brand-navy hover:text-brand-mustard transition-colors" aria-label="Saber más sobre inglés de negocios">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white rounded-lg p-8 sm:p-10 border border-brand-navy/5 premium-shadow hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 rounded-sm bg-brand-navy text-brand-mustard flex items-center justify-center group-hover:bg-brand-mustard group-hover:text-brand-navy transition-colors duration-300">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-navy">Exámenes Oficiales (IELTS / TOEFL)</h3>
+                        <p class="text-sm text-brand-navy/70 leading-relaxed font-light">
+                            Estrategias técnicas precisas, simulacros cronometrados estructurados y corrección minuciosa de escritura para asegurar tu puntaje objetivo en tu primer intento.
+                        </p>
+                    </div>
+                    <div class="pt-8 border-t border-brand-navy/5 mt-8 flex items-center justify-between">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-brand-mustard">Metodología Comprobada</span>
+                        <a href="#contacto" class="text-brand-navy hover:text-brand-mustard transition-colors" aria-label="Saber más sobre exámenes oficiales">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white rounded-lg p-8 sm:p-10 border border-brand-navy/5 premium-shadow hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 rounded-sm bg-brand-navy text-brand-mustard flex items-center justify-center group-hover:bg-brand-mustard group-hover:text-brand-navy transition-colors duration-300">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-navy">Mentoría Conversacional Avanzada</h3>
+                        <p class="text-sm text-brand-navy/70 leading-relaxed font-light">
+                            Fluidez natural y reducción sistemática del acento mediante debates de actualidad geopolítica, cultural y tecnológica, ideal para potenciar la confianza.
+                        </p>
+                    </div>
+                    <div class="pt-8 border-t border-brand-navy/5 mt-8 flex items-center justify-between">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-brand-mustard">Enfoque 1 a 1</span>
+                        <a href="#contacto" class="text-brand-navy hover:text-brand-mustard transition-colors" aria-label="Saber más sobre mentoría conversacional">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTAFOLIO / CASOS DE ÉXITO: Minimalista e Informativo -->
+    <section id="portafolio" class="py-24 sm:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Encabezado -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="space-y-4 max-w-xl">
+                    <span class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-mustard">Resultados Tangibles</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl tracking-tight text-brand-navy">Portafolio de Logros</h2>
+                    <p class="text-sm sm:text-base text-brand-navy/60 font-light">Casos de estudio reales de profesionales y alumnos que alcanzaron sus objetivos lingüísticos más exigentes.</p>
+                </div>
+                <!-- Botón de acción rápido -->
+                <div>
+                    <a href="#contacto" class="inline-flex items-center space-x-2 text-sm font-semibold tracking-wider text-brand-navy group">
+                        <span class="border-b border-brand-navy/30 group-hover:border-brand-mustard pb-1 transition-colors duration-200">Quiero estos resultados</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:text-brand-mustard group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Grilla del Portafolio -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="border border-brand-navy/5 bg-brand-offwhite/50 rounded-lg p-8 flex flex-col justify-between hover:bg-brand-offwhite transition-colors duration-300">
+                    <div class="space-y-4">
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-brand-mustard">Caso de Éxito Corporativo</span>
+                        <h3 class="font-serif text-2xl font-bold text-brand-navy">Admisión de Ejecutivo en MBB</h3>
+                        <p class="text-sm text-brand-navy/70 font-light leading-relaxed">
+                            Acompañamiento lingüístico integral para un Consultor Senior logrando superar con éxito las entrevistas de caso íntegramente en inglés para McKinsey & Company.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-brand-navy/5 flex items-center justify-between text-xs text-brand-navy/50 font-medium">
+                        <span>Puntaje Estimado: C1+</span>
+                        <span>Duración: 3 meses</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="border border-brand-navy/5 bg-brand-offwhite/50 rounded-lg p-8 flex flex-col justify-between hover:bg-brand-offwhite transition-colors duration-300">
+                    <div class="space-y-4">
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-brand-mustard">Logro Académico Internacional</span>
+                        <h3 class="font-serif text-2xl font-bold text-brand-navy">IELTS Academic 8.5 de Promedio</h3>
+                        <p class="text-sm text-brand-navy/70 font-light leading-relaxed">
+                            Preparación estratégica intensiva para una médica buscando realizar su residencia de subespecialidad quirúrgica en el sistema de salud de Oxford, Reino Unido.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-brand-navy/5 flex items-center justify-between text-xs text-brand-navy/50 font-medium">
+                        <span>Writing: 8.0 • Speaking: 9.0</span>
+                        <span>Duración: 5 meses</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="border border-brand-navy/5 bg-brand-offwhite/50 rounded-lg p-8 flex flex-col justify-between hover:bg-brand-offwhite transition-colors duration-300">
+                    <div class="space-y-4">
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-brand-mustard">Conferencia de Alto Perfil</span>
+                        <h3 class="font-serif text-2xl font-bold text-brand-navy">Oratoria Keynote para Web Summit</h3>
+                        <p class="text-sm text-brand-navy/70 font-light leading-relaxed">
+                            Mentoria especializada en pronunciación, control de inflexiones vocales y lenguaje de impacto corporal para un Founder de Start-up FinTech en su presentación principal ante 1,500 personas.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-brand-navy/5 flex items-center justify-between text-xs text-brand-navy/50 font-medium">
+                        <span>Satisfacción: Excelente</span>
+                        <span>Duración: 4 semanas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS: Slider funcional e interactivo -->
+    <section id="testimonios" class="py-24 sm:py-32 bg-brand-navy text-brand-offwhite relative overflow-hidden">
+        <!-- Detalle estético sutil -->
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-brand-navyLight/10 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <!-- Título -->
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-mustard">Experiencias</span>
+                <h2 class="font-serif text-4xl sm:text-5xl tracking-tight text-white">Confianza de Alumnos Reales</h2>
+                <p class="text-sm text-brand-offwhite/60 font-light">La mejor prueba de efectividad es el éxito de quienes ya han pasado por mis programas personalizados.</p>
+            </div>
+
+            <!-- Carrusel de Testimonios (Interactividad JS) -->
+            <div class="max-w-4xl mx-auto">
+                <div class="relative overflow-hidden min-h-[300px]">
+                    <!-- Testimonio 1 -->
+                    <div id="testimonio-1" class="testimonial-slide transition-opacity duration-500 ease-in-out block">
+                        <div class="text-center space-y-8">
+                            <span class="inline-block text-brand-mustard font-serif text-7xl select-none leading-none">“</span>
+                            <p class="font-serif text-xl sm:text-3xl font-light italic leading-relaxed text-brand-offwhite/90">
+                                Trabajar con Luis cambió por completo mi relación con el inglés. Pasé de sentirme insegura en juntas directivas internacionales a coordinar llamadas globales sin dudar un instante de mi vocabulario.
+                            </p>
+                            <div class="pt-6">
+                                <h4 class="font-serif text-lg font-bold text-white">Sofía Varela</h4>
+                                <p class="text-xs text-brand-mustard uppercase tracking-wider mt-1">VP de Operaciones - TechCorp Latam</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 2 -->
+                    <div id="testimonio-2" class="testimonial-slide transition-opacity duration-500 ease-in-out hidden opacity-0">
+                        <div class="text-center space-y-8">
+                            <span class="inline-block text-brand-mustard font-serif text-7xl select-none leading-none">“</span>
+                            <p class="font-serif text-xl sm:text-3xl font-light italic leading-relaxed text-brand-offwhite/90">
+                                Mi objetivo era obtener un 7.5 en IELTS académico en tiempo récord. Con su rigidez técnica y simulaciones personalizadas logré un 8.0. Su enfoque no tiene comparación en el mercado.
+                            </p>
+                            <div class="pt-6">
+                                <h4 class="font-serif text-lg font-bold text-white">Dr. Alejandro Ruiz</h4>
+                                <p class="text-xs text-brand-mustard uppercase tracking-wider mt-1">Médico Cirujano & Investigador</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 3 -->
+                    <div id="testimonio-3" class="testimonial-slide transition-opacity duration-500 ease-in-out hidden opacity-0">
+                        <div class="text-center space-y-8">
+                            <span class="inline-block text-brand-mustard font-serif text-7xl select-none leading-none">“</span>
+                            <p class="font-serif text-xl sm:text-3xl font-light italic leading-relaxed text-brand-offwhite/90">
+                                No solo mejoré mi nivel de conversación, sino que gané herramientas de negociación en inglés. Luis entiende perfectamente las demandas y la velocidad del ecosistema de las startups actuales.
+                            </p>
+                            <div class="pt-6">
+                                <h4 class="font-serif text-lg font-bold text-white">Martín Bianchi</h4>
+                                <p class="text-xs text-brand-mustard uppercase tracking-wider mt-1">Cofundador de PayFlow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles del Slider -->
+                <div class="flex items-center justify-center space-x-6 mt-12">
+                    <button id="prev-testimonio-btn" class="p-2 border border-brand-offwhite/10 rounded-full hover:bg-brand-offwhite/5 text-brand-offwhite/80 transition-colors focus:outline-none" aria-label="Anterior testimonio">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <!-- Indicadores de posición (Puntos) -->
+                    <div class="flex items-center space-x-2" id="testimonial-dots">
+                        <button class="w-2.5 h-2.5 rounded-full bg-brand-mustard transition-all duration-300" data-index="0" aria-label="Ver testimonio 1"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-brand-offwhite/20 transition-all duration-300" data-index="1" aria-label="Ver testimonio 2"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-brand-offwhite/20 transition-all duration-300" data-index="2" aria-label="Ver testimonio 3"></button>
+                    </div>
+                    <button id="next-testimonio-btn" class="p-2 border border-brand-offwhite/10 rounded-full hover:bg-brand-offwhite/5 text-brand-offwhite/80 transition-colors focus:outline-none" aria-label="Siguiente testimonio">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y AGENDAMIENTO -->
+    <section id="contacto" class="py-24 sm:py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Columna de información y detalles de contacto -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-brand-mustard">Iniciemos tu trayecto</span>
+                        <h2 class="font-serif text-4xl sm:text-5xl tracking-tight text-brand-navy">Agendar una Sesión de Diagnóstico</h2>
+                        <p class="text-base text-brand-navy/70 font-light leading-relaxed">
+                            Completa el formulario para realizar una evaluación inicial y sin costo. Conversaremos sobre tus necesidades y cómo podemos desarrollar una estructura de aprendizaje adaptada a ti.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6 pt-6">
+                        <!-- Correo -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-offwhite flex items-center justify-center text-brand-mustard">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg font-bold">Email Directo</h4>
+                                <p class="text-sm text-brand-navy/60">contacto@luismartinez.edu</p>
+                            </div>
+                        </div>
+
+                        <!-- Ubicación -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-offwhite flex items-center justify-center text-brand-mustard">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg font-bold">Ubicación de Consultas</h4>
+                                <p class="text-sm text-brand-navy/60">Cancún, México • Disponible para todo el mundo vía remota</p>
+                            </div>
+                        </div>
+
+                        <!-- Zona de Atención -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-offwhite flex items-center justify-center text-brand-mustard">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg font-bold">Disponibilidad</h4>
+                                <p class="text-sm text-brand-navy/60">Lunes a Viernes, con horarios corporativos flexibles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna de Formulario con UX de alta fidelidad -->
+                <div class="lg:col-span-7 bg-brand-offwhite p-8 sm:p-12 rounded-lg border border-brand-navy/5 premium-shadow relative">
+                    
+                    <!-- Mensaje de éxito del formulario (Inicialmente Oculto) -->
+                    <div id="success-toast" class="absolute inset-0 bg-brand-navy rounded-lg p-8 flex flex-col justify-center items-center text-center space-y-6 transform scale-95 opacity-0 pointer-events-none transition-all duration-300 z-20">
+                        <div class="w-16 h-16 rounded-full bg-brand-mustard/20 text-brand-mustard flex items-center justify-center mb-2">
+                            <i data-lucide="check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl text-white">¡Solicitud Recibida con Éxito!</h3>
+                        <p class="text-sm text-brand-offwhite/70 max-w-sm leading-relaxed">
+                            Gracias por tu interés en los programas. He recibido tus detalles y me comunicaré contigo en las próximas 24 horas hábiles para coordinar nuestra primera sesión.
+                        </p>
+                        <button id="reset-form-btn" class="px-6 py-3 border border-brand-offwhite/20 text-brand-offwhite text-xs font-semibold tracking-wider uppercase rounded-sm hover:border-brand-mustard hover:text-brand-mustard transition-colors">
+                            Volver al formulario
+                        </button>
+                    </div>
+
+                    <form id="diagnostico-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Nombre -->
+                            <div class="space-y-2">
+                                <label for="nombre" class="text-xs uppercase tracking-wider font-semibold text-brand-navy/60 block">Nombre Completo *</label>
+                                <input type="text" id="nombre" name="nombre" required
+                                    class="w-full bg-white px-4 py-3 rounded-sm border border-brand-navy/10 text-brand-navy focus:outline-none focus:ring-1 focus:ring-brand-mustard focus:border-brand-mustard transition-all placeholder-brand-navy/30"
+                                    placeholder="Ej. Sofía Varela">
+                            </div>
+
+                            <!-- Correo -->
+                            <div class="space-y-2">
+                                <label for="email" class="text-xs uppercase tracking-wider font-semibold text-brand-navy/60 block">Correo Electrónico *</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full bg-white px-4 py-3 rounded-sm border border-brand-navy/10 text-brand-navy focus:outline-none focus:ring-1 focus:ring-brand-mustard focus:border-brand-mustard transition-all placeholder-brand-navy/30"
+                                    placeholder="Ej. sofia@empresa.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Nivel Estimado -->
+                            <div class="space-y-2">
+                                <label for="nivel" class="text-xs uppercase tracking-wider font-semibold text-brand-navy/60 block">Nivel Actual Estimado</label>
+                                <div class="relative">
+                                    <select id="nivel" name="nivel"
+                                        class="w-full bg-white px-4 py-3 rounded-sm border border-brand-navy/10 text-brand-navy focus:outline-none focus:ring-1 focus:ring-brand-mustard focus:border-brand-mustard transition-all appearance-none">
+                                        <option value="A1-A2">Principiante (A1 - A2)</option>
+                                        <option value="B1-B2" selected>Intermedio (B1 - B2)</option>
+                                        <option value="C1-C2">Avanzado (C1 - C2)</option>
+                                        <option value="No sé">No estoy seguro de mi nivel</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-brand-navy/50">
+                                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Programa de Interés -->
+                            <div class="space-y-2">
+                                <label for="programa" class="text-xs uppercase tracking-wider font-semibold text-brand-navy/60 block">Programa de Interés *</label>
+                                <div class="relative">
+                                    <select id="programa" name="programa" required
+                                        class="w-full bg-white px-4 py-3 rounded-sm border border-brand-navy/10 text-brand-navy focus:outline-none focus:ring-1 focus:ring-brand-mustard focus:border-brand-mustard transition-all appearance-none">
+                                        <option value="Negocios">Inglés de Negocios y Liderazgo</option>
+                                        <option value="IELTS/TOEFL">Exámenes Oficiales (IELTS/TOEFL)</option>
+                                        <option value="Conversacion">Conversación Avanzada</option>
+                                        <option value="Otro">Otro Enfoque Particular</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-brand-navy/50">
+                                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detalles Adicionales -->
+                        <div class="space-y-2">
+                            <label for="mensaje" class="text-xs uppercase tracking-wider font-semibold text-brand-navy/60 block">Cuéntame sobre tus metas u objetivos principales</label>
+                            <textarea id="mensaje" name="mensaje" rows="4"
+                                class="w-full bg-white px-4 py-3 rounded-sm border border-brand-navy/10 text-brand-navy focus:outline-none focus:ring-1 focus:ring-brand-mustard focus:border-brand-mustard transition-all placeholder-brand-navy/30"
+                                placeholder="Ej. Necesito prepararme para unas entrevistas en inglés que se llevarán a cabo el mes que viene..."></textarea>
+                        </div>
+
+                        <!-- Checkbox Consentimiento -->
+                        <div class="flex items-start space-x-3 pt-2">
+                            <input type="checkbox" id="consentimiento" name="consentimiento" required
+                                class="mt-1 h-4 w-4 rounded border-brand-navy/10 text-brand-mustard focus:ring-brand-mustard">
+                            <label for="consentimiento" class="text-xs text-brand-navy/60 leading-relaxed">
+                                Acepto que mis datos sean tratados exclusivamente para coordinar la evaluación gratuita y estructurar la propuesta.
+                            </label>
+                        </div>
+
+                        <!-- Botón de Envío -->
+                        <button type="submit"
+                            class="w-full py-4 bg-brand-navy text-brand-offwhite rounded-sm font-semibold hover:bg-brand-mustard hover:text-brand-navy transition-all duration-300 transform active:scale-[0.99] shadow-lg shadow-brand-navy/5 hover:shadow-brand-mustard/15">
+                            Enviar Solicitud de Diagnóstico
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA (Footer) -->
+    <footer class="bg-brand-navy text-brand-offwhite border-t border-brand-offwhite/5 py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <!-- Columna Logo e Info -->
+            <div class="md:col-span-2 space-y-6">
+                <div class="flex flex-col">
+                    <span class="font-serif text-3xl font-bold tracking-tight text-white">Luis Martínez</span>
+                    <span class="text-xs tracking-[0.2em] uppercase text-brand-mustard font-semibold mt-1">English Educator</span>
+                </div>
+                <p class="text-sm text-brand-offwhite/50 leading-relaxed max-w-sm">
+                    Metodologías académicas rigurosas adaptadas a perfiles profesionales competitivos de habla hispana.
+                </p>
+                <!-- Redes sociales sutiles -->
+                <div class="flex items-center space-x-4 pt-2">
+                    <a href="#" class="w-8 h-8 rounded-full border border-brand-offwhite/10 flex items-center justify-center hover:bg-brand-mustard hover:text-brand-navy hover:border-brand-mustard transition-colors duration-200" aria-label="LinkedIn Luis Martínez">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-brand-offwhite/10 flex items-center justify-center hover:bg-brand-mustard hover:text-brand-navy hover:border-brand-mustard transition-colors duration-200" aria-label="YouTube de Luis Martínez">
+                        <i data-lucide="youtube" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Enlaces de Interés -->
+            <div class="space-y-4">
+                <h4 class="font-serif text-lg font-semibold text-white">Enlaces Rápidos</h4>
+                <div class="flex flex-col space-y-2 text-sm text-brand-offwhite/60">
+                    <a href="#sobre-mi" class="hover:text-brand-mustard transition-colors">Sobre mí</a>
+                    <a href="#servicios" class="hover:text-brand-mustard transition-colors">Programas</a>
+                    <a href="#portafolio" class="hover:text-brand-mustard transition-colors">Casos de Éxito</a>
+                    <a href="#testimonios" class="hover:text-brand-mustard transition-colors">Testimonios</a>
+                </div>
+            </div>
+
+            <!-- Columna Certificaciones / Avales -->
+            <div class="space-y-4">
+                <h4 class="font-serif text-lg font-semibold text-white">Garantía Académica</h4>
+                <p class="text-sm text-brand-offwhite/50 leading-relaxed">
+                    Certificaciones Cambridge C2 Proficiency, preparación alineada con el Marco Común Europeo de Referencia para las Lenguas (MCER).
+                </p>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-brand-offwhite/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-offwhite/40">
+            <p>© 2026 Luis Martínez. Todos los derechos reservados.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-brand-mustard">Políticas de Privacidad</a>
+                <a href="#" class="hover:text-brand-mustard">Términos del Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS INTERACTIVOS (UI/UX logic) -->
+    <script>
+        // Inicialización de iconos Lucide
+        lucide.createIcons();
+
+        // ELEMENTOS DOM
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const header = document.querySelector('header');
+
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialDots = document.querySelectorAll('#testimonial-dots button');
+        const prevTestimonialBtn = document.getElementById('prev-testimonio-btn');
+        const nextTestimonialBtn = document.getElementById('next-testimonio-btn');
+
+        const diagnosticoForm = document.getElementById('diagnostico-form');
+        const successToast = document.getElementById('success-toast');
+        const resetFormBtn = document.getElementById('reset-form-btn');
+
+        // --- MENÚ MÓVIL ---
+        function toggleMobileMenu() {
+            const isMenuOpen = !mobileMenu.classList.contains('translate-x-full');
+            if (isMenuOpen) {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = ''; // reactiva scroll
+            } else {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden'; // bloquea scroll
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        closeMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // Cerrar menú móvil al hacer click en cualquier sección
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // --- ESTADO HEADER AL HACER SCROLL ---
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('premium-shadow', 'bg-brand-offwhite/95');
+                header.classList.remove('bg-brand-offwhite/90');
+            } else {
+                header.classList.remove('premium-shadow', 'bg-brand-offwhite/95');
+                header.classList.add('bg-brand-offwhite/90');
+            }
+        });
+
+        // --- CAROUSEL DE TESTIMONIOS ---
+        let currentSlide = 0;
+
+        function updateTestimonials(index) {
+            // Asegura rango circular
+            if (index >= testimonialSlides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = testimonialSlides.length - 1;
+            else currentSlide = index;
+
+            testimonialSlides.forEach((slide, i) => {
+                if (i === currentSlide) {
+                    slide.classList.remove('hidden');
+                    // Retardo mínimo para trigger de opacidad CSS
+                    setTimeout(() => {
+                        slide.classList.remove('opacity-0');
+                    }, 50);
+                } else {
+                    slide.classList.add('opacity-0');
+                    slide.classList.add('hidden');
+                }
+            });
+
+            // Actualizar botones de posición
+            testimonialDots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.add('bg-brand-mustard');
+                    dot.classList.remove('bg-brand-offwhite/20');
+                } else {
+                    dot.classList.remove('bg-brand-mustard');
+                    dot.classList.add('bg-brand-offwhite/20');
+                }
+            });
+        }
+
+        prevTestimonialBtn.addEventListener('click', () => {
+            updateTestimonials(currentSlide - 1);
+        });
+
+        nextTestimonialBtn.addEventListener('click', () => {
+            updateTestimonials(currentSlide + 1);
+        });
+
+        testimonialDots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                updateTestimonials(index);
+            });
+        });
+
+        // Rotación automática suave de testimonios cada 8 segundos
+        let testimonialInterval = setInterval(() => {
+            updateTestimonials(currentSlide + 1);
+        }, 8000);
+
+        // Reset del intervalo al interactuar de forma manual
+        function resetTestimonialInterval() {
+            clearInterval(testimonialInterval);
+            testimonialInterval = setInterval(() => {
+                updateTestimonials(currentSlide + 1);
+            }, 8000);
+        }
+
+        [prevTestimonialBtn, nextTestimonialBtn, ...testimonialDots].forEach(btn => {
+            btn.addEventListener('click', resetTestimonialInterval);
+        });
+
+
+        // --- MANEJO DE FORMULARIO DE CONTACTO ---
+        diagnosticoForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evitamos recargar la página
+
+            // Validación de consentimiento antes de proceder
+            const consentimiento = document.getElementById('consentimiento').checked;
+            if (!consentimiento) return;
+
+            // Transición del toast de éxito
+            successToast.classList.remove('pointer-events-none');
+            successToast.classList.add('opacity-100', 'scale-100');
+        });
+
+        resetFormBtn.addEventListener('click', () => {
+            // Reiniciamos los campos del formulario
+            diagnosticoForm.reset();
+            // Escondemos el toast
+            successToast.classList.remove('opacity-100', 'scale-100');
+            successToast.classList.add('pointer-events-none');
+        });
+    </script>
+</body>
+</html>
